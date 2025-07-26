@@ -1,0 +1,14 @@
+name = "tibberz-image-generator"
+main = "src/index.js"
+
+# Set a recent compatibility date. Wrangler requires this format.
+compatibility_date = "2025-07-26"
+
+# Deploy to workers.dev by default. Remove or modify this if you later want
+# to route the worker to a custom domain or zone.
+workers_dev = true
+
+# Bind the Workers AI service to the `AI` variable in your Worker code. Without
+# this, env.AI will be undefined and calls to `env.AI.run()` will fail.
+[ai]
+binding = "AI"
