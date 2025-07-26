@@ -1,1 +1,50 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tibberz Prompt Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tibberz Prompt Generator</h1>
+
+  <div class="container">
+
+    <!-- Mood filter -->
+    <div class="card full-row">
+      <label for="mood">Mood Filter</label>
+      <select id="mood">
+        <option>Wildcard</option>
+        <option>Whimsical</option>
+        <option>Battle‑ready</option>
+        <option>Academic</option>
+        <option>Regal</option>
+        <option>Mysterious</option>
+        <option>Cozy</option>
+        <option>Dramatic</option>
+      </select>
+    </div>
+
+    <!-- All category cards are injected here -->
+    <div id="categoryZone" class="flex"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="btnRandomAll">🎲 Randomize All</button>
+      <button id="btnReroll">🔄 Re‑roll Unlocked</button>
+    </div>
+
+    <!-- Outputs -->
+    <section class="outputs">
+      <h2>Exports</h2>
+      <label>Full Prompt<textarea id="outFull" readonly></textarea></label>
+      <label>Outfit‑only Block<textarea id="outOutfit" readonly></textarea></label>
+      <label>Caption<textarea id="outCaption" readonly></textarea></label>
+      <label>Doll Version<textarea id="outDoll" readonly></textarea></label>
+      <label>JSON Export<textarea id="outJSON" readonly></textarea></label>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
