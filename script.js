@@ -4,7 +4,7 @@
   'use strict';
 
   /*** -------------------- Data -------------------- ***/
-  const categories = [
+const categories = [
     { id:'color', label:'🎨 Color Scheme', mandatory:true, items:[
       {t:'deep purple',          m:['Regal','Mysterious','Dramatic']},
       {t:'forest green',         m:['Whimsical','Cozy']},
@@ -131,7 +131,17 @@
       {t:'weather',m:['Whimsical']},
       {t:'',m:[]}
     ]}
-  ];
+];
+
+  const characters = {
+    scraggles: { name: 'Queen Scraggles 👑', desc: 'an anthropomorphic gray and white shitzu Queen' },
+    tibberz:   { name: 'Tibberz🧙', desc: 'an anthropomorphic brown Pomeranian with round glasses' },
+    muffins:   { name: 'Muffins🌲', desc: 'an anthropomorphic mystical gray cat' },
+    buster:    { name: 'Buster 🍗', desc: 'an anthropomorphic friendly brown dog with floppy ears' },
+    pika:      { name: 'Pika🧡', desc: 'an anthropomorphic young fluffy orange cat' },
+    bey:       { name: 'Bey🐸', desc: 'a young anthropomorphic black and calico cat with defined orange eyebrows' },
+    ling:      { name: 'Ling🕶️', desc: 'a young anthropomorphic platinum blonde cat' },
+  };
 
   /*** -------------------- Utilities -------------------- ***/
   const $ = sel => document.querySelector(sel);
@@ -149,8 +159,9 @@
   /*** -------------------- Core Class -------------------- ***/
   class PromptGenerator {
     constructor() {
-      this.moodSelect = $('#mood');
-      this.catZone    = $('#categoryZone');
+      this.moodSelect     = $('#mood');
+      this.characterSelect = $('#character');
+      this.catZone        = $('#categoryZone');
       this.outputEls  = {
         full:    $('#outFull'),
         outfit:  $('#outOutfit'),
@@ -210,12 +221,13 @@
     }
 
     /** Attach mood change listener */
-    attachTopEvents() {
-      this.moodSelect.addEventListener('change', () => {
-        this.populateOptions();
-        this.randomize(true);
-      });
-    }
+  attachTopEvents() {
+    this.moodSelect.addEventListener('change', () => {
+      this.populateOptions();
+      this.randomize(true);
+    });
+    this.characterSelect.addEventListener('change', () => this.updateOutput());
+  }
 
     /** Populate each <select> with options filtered by mood */
     populateOptions() {
@@ -275,20 +287,22 @@
         ? data.accessories.join(' and ')
         : 'no accessories';
 
+      const char = characters[this.characterSelect.value] || characters.tibberz;
+
       const fxSentence = data.fx.trim()
-        ? `A ${data.fx} follows him wherever he moves.`
+        ? `A ${data.fx} follows them wherever they move.`
         : '';
 
       const affinitySentence = data.affinity.trim()
-        ? `His style is unmistakably shaped by a connection to ${data.affinity} magic — practical, layered, and spell‑ready.`
-        : 'His style is practical, layered, and spell‑ready.';
+        ? `Their style is unmistakably shaped by a connection to ${data.affinity} magic — practical, layered, and spell‑ready.`
+        : 'Their style is practical, layered, and spell‑ready.';
 
       /* ----- Full prompt (cleanly assembled) ----- */
       const fullParts = [
-        `Tibberz, a brown Pomeranian wizard with large round glasses and no tail, wears a ${data.color} ${data.topwear} decorated with ${data.pattern}, paired with ${data.bottomwear} designed for balance and movement.`,
-        `Draped over his shoulders is a ${data.cloak} and his ${data.sleeve} adds dramatic flair.`,
-        `On his head sits a ${data.headwear}, and he walks confidently in ${data.footwear}.`,
-        `He carries ${accessoriesTxt}.`,
+        `${char.name}, ${char.desc}, wears a ${data.color} ${data.topwear} decorated with ${data.pattern}, paired with ${data.bottomwear} designed for balance and movement.`,
+        `Draped over their shoulders is a ${data.cloak} and their ${data.sleeve} adds dramatic flair.`,
+        `On their head sits a ${data.headwear}, and they walk confidently in ${data.footwear}.`,
+        `They carry ${accessoriesTxt}.`,
         fxSentence,
         affinitySentence
       ];
@@ -300,10 +314,10 @@
         `A ${data.color} ${data.topwear} with ${data.pattern}; ${data.bottomwear}; ${data.cloak}; ${data.sleeve}; ${data.headwear}; ${data.footwear}; accessories: ${accessoriesTxt}${data.fx ? ', ' + data.fx : ''}.`
       );
       this.outputEls.caption.value = tidy(
-        `A ${data.color}‑clad wizard pup dons a ${data.topwear} and ${data.cloak}, ready for adventure.`
+        `A ${data.color}-clad ${char.name} dons a ${data.topwear} and ${data.cloak}, ready for adventure.`
       );
       this.outputEls.doll.value    = tidy(
-        `Brown plush Pomeranian wizard doll in ${data.color} outfit with ${data.headwear} and tiny ${data.cloak}.`
+        `${char.name} plush doll in ${data.color} outfit with ${data.headwear} and tiny ${data.cloak}.`
       );
       this.outputEls.json.value    = JSON.stringify(data, null, 2);
     }
