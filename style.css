@@ -23,3 +23,5 @@ button:hover{background:var(--btn-h);}
 .outputs h2{margin:.25rem 0 1rem;font-size:1.1rem;}
 textarea{width:100%;min-height:80px;background:#111;color:var(--accent);border:none;border-radius:4px;padding:.5rem;font-family:monospace;font-size:.85rem;margin-top:.25rem;}
 .controls{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0;}
+.btn-group{display:flex;gap:.5rem;margin-top:.25rem;}
+.btn-group button{flex:1;}
