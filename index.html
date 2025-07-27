@@ -57,9 +57,13 @@
       mapping.forEach(({ id, label }) => {
         const textarea = document.getElementById(id);
         if (!textarea) return;
-        const button = document.createElement('button');
-        button.textContent = label;
-        button.addEventListener('click', () => {
+
+        const group = document.createElement('div');
+        group.className = 'btn-group';
+
+        const tryBtn = document.createElement('button');
+        tryBtn.textContent = label;
+        tryBtn.addEventListener('click', () => {
           const prompt = textarea.value.trim();
           if (prompt) {
             const url =
@@ -68,7 +72,21 @@
             window.open(url, '_blank');
           }
         });
-        textarea.parentNode.insertBefore(button, textarea.nextSibling);
+
+        const copyBtn = document.createElement('button');
+        copyBtn.textContent = 'copy📸';
+        copyBtn.addEventListener('click', () => {
+          const prompt = textarea.value.trim();
+          if (prompt) {
+            navigator.clipboard.writeText(prompt).catch(err =>
+              console.error('Copy failed', err)
+            );
+          }
+        });
+
+        group.appendChild(tryBtn);
+        group.appendChild(copyBtn);
+        textarea.parentNode.insertBefore(group, textarea.nextSibling);
       });
     });
   </script>
