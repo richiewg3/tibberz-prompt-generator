@@ -742,7 +742,7 @@ characters.bey.desc  = 'a black-and-calico cat with orange eyebrows';
     constructor() {
       this.moodSelect      = $('#mood');
       this.characterSelect = $('#character');
-      this.lookbookSelect  = $('#lookbook');   // new line
+      this.lookbookSelect  = $('#lookbook');
       this.catZone         = $('#categoryZone');
       this.outputEls       = {
         full:    $('#outFull'),
@@ -756,7 +756,7 @@ characters.bey.desc  = 'a black-and-calico cat with orange eyebrows';
       // first render
       this.populateOptions();
       this.randomize(true);
-      this.updateLookbookSelect();             // new line
+      this.updateLookbookSelect();
     }
 
     /** Build every category card dynamically */
@@ -812,10 +812,10 @@ characters.bey.desc  = 'a black-and-calico cat with orange eyebrows';
     this.characterSelect.addEventListener('change', () => {
       this.populateOptions();
       this.randomize(true);
-      this.updateLookbookSelect();          // new line
+      this.updateLookbookSelect();
     });
     if (this.lookbookSelect) {
-      this.lookbookSelect.addEventListener('change', () => this.applyLookbook()); // new line
+      this.lookbookSelect.addEventListener('change', () => this.applyLookbook());
     }
   }
 
