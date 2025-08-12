@@ -143,6 +143,587 @@ const categories = [
     ling:      { name: 'Ling🕶️', desc: 'a young anthropomorphic platinum blonde cat' },
   };
 
+// PREBUILT OUTFIT COLLECTION (Runway Lookbook)
+const lookbook = {
+  scraggles: [
+    {
+      label: "Crown & Coronation",
+      data: {
+        color: "ivory, gold and royal purple",
+        topwear: "brocade bodice with peplum",
+        bottomwear: "layered court skirt",
+        pattern: "damask and tiny fleur-de-lis",
+        cloak: "velvet train with ermine",
+        sleeve: "elbow lace",
+        headwear: "tall crystal crown",
+        footwear: "pearl‑trim slippers",
+        accessories: ["scepter","opera gloves"],
+        fx: "soft aurora halo",
+        affinity: ""
+      }
+    },
+    {
+      label: "Tea on the Balcony",
+      data: {
+        color: "mint, cream and gold",
+        topwear: "cropped bouclé jacket",
+        bottomwear: "pleated tea skirt",
+        pattern: "herringbone tweed",
+        cloak: "short capelet",
+        sleeve: "3/4 sleeves",
+        headwear: "crown fascinator",
+        footwear: "slingback flats",
+        accessories: ["satin gloves","teacup"],
+        fx: "sun‑kiss shimmer",
+        affinity: ""
+      }
+    },
+    {
+      label: "Battle‑Queen Aegis",
+      data: {
+        color: "onyx, gold and crimson",
+        topwear: "gold‑inlaid breastplate",
+        bottomwear: "armored skirt panels and leggings",
+        pattern: "scale‑embossed metal",
+        cloak: "short crimson war mantle",
+        sleeve: "rune vambraces",
+        headwear: "circlet‑helm",
+        footwear: "sabaton boots",
+        accessories: ["sword belt","gauntlets"],
+        fx: "radiant barrier",
+        affinity: ""
+      }
+    },
+    {
+      label: "Forest Diplomat",
+      data: {
+        color: "sage, cream and bronze",
+        topwear: "linen wrap blouse",
+        bottomwear: "split riding skirt",
+        pattern: "leaf filigree",
+        cloak: "moss travel cloak",
+        sleeve: "bishop sleeves",
+        headwear: "leaf crown",
+        footwear: "riding boots",
+        accessories: ["map case","leather gloves"],
+        fx: "whispering leaves",
+        affinity: ""
+      }
+    },
+    {
+      label: "Starlight Soirée",
+      data: {
+        color: "midnight, silver and opal",
+        topwear: "off‑shoulder sequin bodice",
+        bottomwear: "tulle mermaid tea‑length",
+        pattern: "constellation beading",
+        cloak: "sheer comet‑trail",
+        sleeve: "long sheer gloves",
+        headwear: "comet tiara",
+        footwear: "crystal heels",
+        accessories: ["satin clutch","diamond choker"],
+        fx: "star‑glow aura",
+        affinity: ""
+      }
+    }
+  ],
+  tibberz: [
+    {
+      label: "Classic Star Wizard",
+      data: {
+        color: "cobalt, silver and white",
+        topwear: "star‑spangled long robe",
+        bottomwear: "wide trousers under robe",
+        pattern: "stitched constellations",
+        cloak: "pointed mantle",
+        sleeve: "bell sleeves",
+        headwear: "tall cone hat",
+        footwear: "curled slippers",
+        accessories: ["round glasses","potion satchel"],
+        fx: "rune sparkles",
+        affinity: ""
+      }
+    },
+    {
+      label: "Street Alchemist",
+      data: {
+        color: "olive, charcoal and brass",
+        topwear: "utility vest over linen",
+        bottomwear: "cargo breeches",
+        pattern: "patchwork canvas",
+        cloak: "pocketed half‑cape apron",
+        sleeve: "rolled sleeves",
+        headwear: "newsboy cap with goggles",
+        footwear: "lace‑up boots",
+        accessories: ["vial bandolier","gloves"],
+        fx: "fizzing cloud",
+        affinity: ""
+      }
+    },
+    {
+      label: "Archmage Ceremonial",
+      data: {
+        color: "ivory, lapis and gold",
+        topwear: "embroidered high‑collar robe",
+        bottomwear: "layered panels and trousers",
+        pattern: "geometric sigils",
+        cloak: "ombré floor cape",
+        sleeve: "layered cuffs",
+        headwear: "halo brim hat",
+        footwear: "soft slippers",
+        accessories: ["staff","sigil gloves"],
+        fx: "spell‑circle halo",
+        affinity: ""
+      }
+    },
+    {
+      label: "Battle Mage",
+      data: {
+        color: "gunmetal, violet and ember",
+        topwear: "reinforced short robe",
+        bottomwear: "armored leggings",
+        pattern: "hex‑stitch",
+        cloak: "split combat cloak",
+        sleeve: "rune bracers",
+        headwear: "runic hood",
+        footwear: "combat boots",
+        accessories: ["spell grenades","fingerless gloves"],
+        fx: "crackling ward",
+        affinity: ""
+      }
+    },
+    {
+      label: "Winter Enchanter",
+      data: {
+        color: "frost blue, cream and silver",
+        topwear: "knitted sweater‑tunic",
+        bottomwear: "wool trousers",
+        pattern: "fair‑isle snowflakes",
+        cloak: "fur‑lined capelet",
+        sleeve: "cable‑knit cuffs",
+        headwear: "pom beanie (rune patch)",
+        footwear: "fur boots",
+        accessories: ["mittens","cocoa mug"],
+        fx: "breath sparkles",
+        affinity: ""
+      }
+    }
+  ],
+  buster: [
+    {
+      label: "Market Merchant Classic",
+      data: {
+        color: "warm brown, tan and moss",
+        topwear: "quilted tunic",
+        bottomwear: "rugged breeches",
+        pattern: "grid quilting",
+        cloak: "short leather capelet",
+        sleeve: "rolled work sleeves",
+        headwear: "flat cap",
+        footwear: "ankle work boots",
+        accessories: ["coin belt","apron"],
+        fx: "luck aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "Highway Rascal",
+      data: {
+        color: "charcoal, burgundy and brass",
+        topwear: "leather jacket",
+        bottomwear: "knee‑patched trousers",
+        pattern: "subtle chevron",
+        cloak: "half‑cape",
+        sleeve: "bracers",
+        headwear: "hood with bandit scarf",
+        footwear: "riding boots",
+        accessories: ["grappling hook","gloves"],
+        fx: "shadow blur",
+        affinity: ""
+      }
+    },
+    {
+      label: "Poster Baddie Armor",
+      data: {
+        color: "obsidian and red",
+        topwear: "sleek chestplate",
+        bottomwear: "greaves and pants",
+        pattern: "matte scales",
+        cloak: "dramatic short cape",
+        sleeve: "gauntlets",
+        headwear: "open‑face helm",
+        footwear: "heavy sabatons",
+        accessories: ["utility belt","shield"],
+        fx: "intimidation smoke",
+        affinity: ""
+      }
+    },
+    {
+      label: "Festival Barker",
+      data: {
+        color: "saffron, teal and cream",
+        topwear: "striped waistcoat",
+        bottomwear: "cuffed trousers",
+        pattern: "candy stripes",
+        cloak: "showman tailcoat",
+        sleeve: "puff sleeves",
+        headwear: "bowler with ticket",
+        footwear: "polished shoes",
+        accessories: ["whistle","gloves"],
+        fx: "confetti burst",
+        affinity: ""
+      }
+    },
+    {
+      label: "River Scout",
+      data: {
+        color: "navy, olive and sand",
+        topwear: "canvas field shirt",
+        bottomwear: "utility shorts and leggings",
+        pattern: "ripstop",
+        cloak: "packable poncho",
+        sleeve: "rolled sleeves",
+        headwear: "wide‑brim hat",
+        footwear: "waterproof boots",
+        accessories: ["compass","knife"],
+        fx: "current‑sense",
+        affinity: ""
+      }
+    }
+  ],
+  muffins: [
+    {
+      label: "Leaf‑Queen Regalia",
+      data: {
+        color: "emerald, bark and gold",
+        topwear: "woven leaf corset",
+        bottomwear: "petal skirt",
+        pattern: "vine embroidery",
+        cloak: "trailing moss mantle",
+        sleeve: "sheer vine sleeves",
+        headwear: "living flower crown",
+        footwear: "leaf‑lace sandals",
+        accessories: ["druid staff","gloves"],
+        fx: "biolume spores",
+        affinity: ""
+      }
+    },
+    {
+      label: "Shaman’s Grotto",
+      data: {
+        color: "indigo, sage and charcoal",
+        topwear: "wrap top",
+        bottomwear: "sarong pants",
+        pattern: "hand‑dyed shibori",
+        cloak: "hooded shawl",
+        sleeve: "arm‑warmers",
+        headwear: "talisman hood",
+        footwear: "moccasins",
+        accessories: ["bone charms","crystal pendulum"],
+        fx: "mist aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "River Rider",
+      data: {
+        color: "seafoam, slate and white",
+        topwear: "waterproof vest",
+        bottomwear: "quick‑dry pants",
+        pattern: "fish‑scale quilt",
+        cloak: "splash‑guard cape",
+        sleeve: "roll‑tabs",
+        headwear: "reed hat",
+        footwear: "river boots",
+        accessories: ["rope belt","gloves"],
+        fx: "water‑walk ripple",
+        affinity: ""
+      }
+    },
+    {
+      label: "Moonlit Ceremony",
+      data: {
+        color: "silver, lavender and midnight",
+        topwear: "silk drape",
+        bottomwear: "layered chiffon",
+        pattern: "crescent motifs",
+        cloak: "glowing gossamer",
+        sleeve: "long bell sleeves",
+        headwear: "crescent halo",
+        footwear: "soft slippers",
+        accessories: ["lantern","lace gloves"],
+        fx: "lunar halo",
+        affinity: ""
+      }
+    },
+    {
+      label: "Harvest Matriarch",
+      data: {
+        color: "pumpkin, wheat and russet",
+        topwear: "linen blouse",
+        bottomwear: "work skirt and apron",
+        pattern: "plaid and embroidery",
+        cloak: "short shawl",
+        sleeve: "rolled sleeves",
+        headwear: "straw crown",
+        footwear: "ankle boots",
+        accessories: ["basket","leather gloves"],
+        fx: "bounty charm",
+        affinity: ""
+      }
+    }
+  ],
+  pika: [
+    {
+      label: "Signature Street Prince",
+      data: {
+        color: "crimson, olive, charcoal and gold",
+        topwear: "crimson hoodie",
+        bottomwear: "olive shorts",
+        pattern: "patched knit",
+        cloak: "",
+        sleeve: "rib cuffs",
+        headwear: "",
+        footwear: "rugged sneakers",
+        accessories: ["crossbody pouch","wristband"],
+        fx: "mischief spark",
+        affinity: ""
+      }
+    },
+    {
+      label: "River Rogue",
+      data: {
+        color: "teal, sand and charcoal",
+        topwear: "utility vest over tee",
+        bottomwear: "quick‑dry cargos",
+        pattern: "ripstop",
+        cloak: "packable poncho",
+        sleeve: "arm wraps",
+        headwear: "cap with frog pin",
+        footwear: "river sneakers",
+        accessories: ["rope bracelet","gloves"],
+        fx: "current hop",
+        affinity: ""
+      }
+    },
+    {
+      label: "Royal Runaway",
+      data: {
+        color: "crimson, cream and gold",
+        topwear: "cropped embroidered vest over hoodie",
+        bottomwear: "soft tailored breeches",
+        pattern: "crest embroidery",
+        cloak: "short single‑shoulder cape",
+        sleeve: "rolled sleeves",
+        headwear: "cap with tiny crown pin",
+        footwear: "ankle boots",
+        accessories: ["utility belt","signet tag necklace"],
+        fx: "royal spark",
+        affinity: ""
+      }
+    },
+    {
+      label: "Shadow Courier",
+      data: {
+        color: "black, graphite and neon‑lime",
+        topwear: "stealth zip‑up",
+        bottomwear: "tapered joggers",
+        pattern: "matte microgrid",
+        cloak: "cropped stealth cape",
+        sleeve: "thumb loops",
+        headwear: "hood and mask",
+        footwear: "silent runners",
+        accessories: ["utility strap","messenger pack"],
+        fx: "blur dash",
+        affinity: ""
+      }
+    },
+    {
+      label: "Birthday King",
+      data: {
+        color: "ruby, confetti brights and white",
+        topwear: "satin patch bomber",
+        bottomwear: "tailored shorts with piping",
+        pattern: "party crests",
+        cloak: "short festive cape",
+        sleeve: "bracelet‑length bands",
+        headwear: "paper crown",
+        footwear: "clean high‑tops",
+        accessories: ["party whistle","tiny frog‑charm chain"],
+        fx: "confetti sparkles",
+        affinity: ""
+      }
+    }
+  ],
+  bey: [
+    {
+      label: "Apprentice Chic",
+      data: {
+        color: "olive, tan and brown",
+        topwear: "cropped blouse",
+        bottomwear: "uneven skirt (patched)",
+        pattern: "visible stitching",
+        cloak: "short travel mantle",
+        sleeve: "rolled sleeves",
+        headwear: "",
+        footwear: "soft adventurer boots",
+        accessories: ["frog pouch","gloves"],
+        fx: "luck‑glow",
+        affinity: ""
+      }
+    },
+    {
+      label: "Cliffside Scout",
+      data: {
+        color: "sky, charcoal and rust",
+        topwear: "windbreaker vest over tunic",
+        bottomwear: "shorts and leggings",
+        pattern: "wind chevrons",
+        cloak: "hooded short cape",
+        sleeve: "elbow guards",
+        headwear: "aviator cap with goggles",
+        footwear: "grip boots",
+        accessories: ["carabiners","gloves"],
+        fx: "updraft glide",
+        affinity: ""
+      }
+    },
+    {
+      label: "Frog Prince Heist",
+      data: {
+        color: "jade, black and gold",
+        topwear: "sleek rogue vest",
+        bottomwear: "tapered trousers",
+        pattern: "leaf brocade",
+        cloak: "half‑cape",
+        sleeve: "lace‑up wraps",
+        headwear: "frog‑stitched hood",
+        footwear: "quiet boots",
+        accessories: ["lockpicks","gloves"],
+        fx: "camo shimmer",
+        affinity: ""
+      }
+    },
+    {
+      label: "Festival Rogue",
+      data: {
+        color: "magenta, gold and black",
+        topwear: "corset peplum",
+        bottomwear: "flared skirt‑shorts",
+        pattern: "filigree swirls",
+        cloak: "playful capelet",
+        sleeve: "puff sleeves",
+        headwear: "feather mini hat",
+        footwear: "heeled boots",
+        accessories: ["lace gloves","coin chain"],
+        fx: "sparkler aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "Shadow Diplomat",
+      data: {
+        color: "plum, charcoal and silver",
+        topwear: "longline vest",
+        bottomwear: "cigarette pants",
+        pattern: "subtle jacquard",
+        cloak: "structured shoulder cape",
+        sleeve: "fitted sleeves",
+        headwear: "wide‑brim hat",
+        footwear: "pointed boots",
+        accessories: ["document tube","gloves"],
+        fx: "truth‑glow",
+        affinity: ""
+      }
+    }
+  ],
+  ling: [
+    {
+      label: "Dragon‑Scale Hero",
+      data: {
+        color: "deep blue, charcoal and onyx",
+        topwear: "dragon‑scale leather tunic",
+        bottomwear: "dark pants",
+        pattern: "scaled emboss",
+        cloak: "one‑shoulder half‑cape",
+        sleeve: "forearm guards",
+        headwear: "",
+        footwear: "adventurer boots",
+        accessories: ["utility belt","gloves"],
+        fx: "ember‑resist aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "Courtyard Duelist",
+      data: {
+        color: "white, navy and silver",
+        topwear: "ruffled shirt with vest",
+        bottomwear: "slim breeches",
+        pattern: "pinstripe vest",
+        cloak: "fencing capelet",
+        sleeve: "puff‑to‑fitted sleeves",
+        headwear: "plumed cap",
+        footwear: "fencing boots",
+        accessories: ["glove","rapier belt"],
+        fx: "precision aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "River Pirate Captain",
+      data: {
+        color: "navy, rust and cream",
+        topwear: "open coat over stripes",
+        bottomwear: "cropped sailor trousers",
+        pattern: "nautical stripe",
+        cloak: "coat tails",
+        sleeve: "cuffed sleeves",
+        headwear: "tricorne",
+        footwear: "deck boots",
+        accessories: ["compass","gloves"],
+        fx: "wave‑call",
+        affinity: ""
+      }
+    },
+    {
+      label: "Royal Guard Trainee",
+      data: {
+        color: "crimson, gold and black",
+        topwear: "military jacket",
+        bottomwear: "pressed trousers",
+        pattern: "chevron braid",
+        cloak: "shoulder sash",
+        sleeve: "button cuffs",
+        headwear: "cadet cap",
+        footwear: "polished boots",
+        accessories: ["gloves","belt"],
+        fx: "shield aura",
+        affinity: ""
+      }
+    },
+    {
+      label: "Explorer Trickshot",
+      data: {
+        color: "khaki, moss and umber",
+        topwear: "safari pocket shirt",
+        bottomwear: "reinforced trousers",
+        pattern: "herringbone canvas",
+        cloak: "rolled poncho",
+        sleeve: "roll‑tab sleeves",
+        headwear: "adventure hat",
+        footwear: "trail boots",
+        accessories: ["slingshot holster","gloves"],
+        fx: "eagle‑eye aura",
+        affinity: ""
+      }
+    }
+  ]
+};
+
+characters.pika.desc = 'an orange cat with slightly messy hair';
+characters.bey.desc  = 'a black-and-calico cat with orange eyebrows';
+
   /*** -------------------- Utilities -------------------- ***/
   const $ = sel => document.querySelector(sel);
 
@@ -159,10 +740,11 @@ const categories = [
   /*** -------------------- Core Class -------------------- ***/
   class PromptGenerator {
     constructor() {
-      this.moodSelect     = $('#mood');
+      this.moodSelect      = $('#mood');
       this.characterSelect = $('#character');
-      this.catZone        = $('#categoryZone');
-      this.outputEls  = {
+      this.lookbookSelect  = $('#lookbook');   // new line
+      this.catZone         = $('#categoryZone');
+      this.outputEls       = {
         full:    $('#outFull'),
         outfit:  $('#outOutfit'),
         caption: $('#outCaption'),
@@ -174,6 +756,7 @@ const categories = [
       // first render
       this.populateOptions();
       this.randomize(true);
+      this.updateLookbookSelect();             // new line
     }
 
     /** Build every category card dynamically */
@@ -226,7 +809,14 @@ const categories = [
       this.populateOptions();
       this.randomize(true);
     });
-    this.characterSelect.addEventListener('change', () => this.updateOutput());
+    this.characterSelect.addEventListener('change', () => {
+      this.populateOptions();
+      this.randomize(true);
+      this.updateLookbookSelect();          // new line
+    });
+    if (this.lookbookSelect) {
+      this.lookbookSelect.addEventListener('change', () => this.applyLookbook()); // new line
+    }
   }
 
     /** Populate each <select> with options filtered by mood */
@@ -251,6 +841,9 @@ const categories = [
 
     /** Randomize selections; all = true forces every category, otherwise respects "lock" checkboxes */
     randomize(all = true) {
+      if (this.lookbookSelect) {
+        this.lookbookSelect.value = '';  // reset lookbook to Custom/Random on randomize
+      }
       const mood = this.moodSelect.value;
       categories.forEach(cat => {
         if (!all && $(`#lock_${cat.id}`).checked) return;
@@ -320,6 +913,49 @@ const categories = [
         `${char.name} plush doll in ${data.color} outfit with ${data.headwear} and tiny ${data.cloak}.`
       );
       this.outputEls.json.value    = JSON.stringify(data, null, 2);
+    }
+
+    // Populate lookbook select based on chosen character
+    updateLookbookSelect() {
+      if (!this.lookbookSelect) return;
+      const charKey = this.characterSelect.value;
+      const select = this.lookbookSelect;
+      select.innerHTML = '';
+      const baseOpt = document.createElement('option');
+      baseOpt.value = '';
+      baseOpt.textContent = 'Custom/Random';
+      select.appendChild(baseOpt);
+      const entries = lookbook[charKey] || [];
+      entries.forEach((entry, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        opt.textContent = entry.label;
+        select.appendChild(opt);
+      });
+    }
+
+    // Apply a prebuilt outfit when selected
+    applyLookbook() {
+      const charKey = this.characterSelect.value;
+      const idx = this.lookbookSelect?.value;
+      if (!idx) return;
+      const entries = lookbook[charKey] || [];
+      const outfit = entries[idx];
+      if (!outfit) return;
+      const data = outfit.data;
+      categories.forEach(cat => {
+        const sel = document.getElementById(cat.id);
+        if (!sel) return;
+        if (data.hasOwnProperty(cat.id)) {
+          if (cat.multi) {
+            const values = Array.isArray(data[cat.id]) ? data[cat.id] : [data[cat.id]];
+            [...sel.options].forEach(o => { o.selected = values.includes(o.value); });
+          } else {
+            sel.value = data[cat.id] || '';
+          }
+        }
+      });
+      this.updateOutput();
     }
   }
 
